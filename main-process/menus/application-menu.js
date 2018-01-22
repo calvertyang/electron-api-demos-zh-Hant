@@ -4,43 +4,42 @@ const Menu = electron.Menu
 const app = electron.app
 
 let template = [{
-  label: 'Edit',
+  label: '編輯',
   submenu: [{
-    label: 'Undo',
+    label: '復原',
     accelerator: 'CmdOrCtrl+Z',
     role: 'undo'
   }, {
-    label: 'Redo',
+    label: '重做',
     accelerator: 'Shift+CmdOrCtrl+Z',
     role: 'redo'
   }, {
     type: 'separator'
   }, {
-    label: 'Cut',
+    label: '剪下',
     accelerator: 'CmdOrCtrl+X',
     role: 'cut'
   }, {
-    label: 'Copy',
+    label: '複製',
     accelerator: 'CmdOrCtrl+C',
     role: 'copy'
   }, {
-    label: 'Paste',
+    label: '貼上',
     accelerator: 'CmdOrCtrl+V',
     role: 'paste'
   }, {
-    label: 'Select All',
+    label: '全選',
     accelerator: 'CmdOrCtrl+A',
     role: 'selectall'
   }]
 }, {
-  label: 'View',
+  label: '檢視',
   submenu: [{
-    label: 'Reload',
+    label: '重新載入',
     accelerator: 'CmdOrCtrl+R',
     click: function (item, focusedWindow) {
       if (focusedWindow) {
-        // on reload, start fresh and close any old
-        // open secondary windows
+        // 重新載入後，重新開始並關閉任何已開啟的次要視窗
         if (focusedWindow.id === 1) {
           BrowserWindow.getAllWindows().forEach(function (win) {
             if (win.id > 1) {
@@ -52,7 +51,7 @@ let template = [{
       }
     }
   }, {
-    label: 'Toggle Full Screen',
+    label: '切換全螢幕',
     accelerator: (function () {
       if (process.platform === 'darwin') {
         return 'Ctrl+Command+F'
@@ -66,7 +65,7 @@ let template = [{
       }
     }
   }, {
-    label: 'Toggle Developer Tools',
+    label: '切換開發者工具',
     accelerator: (function () {
       if (process.platform === 'darwin') {
         return 'Alt+Command+I'
@@ -82,34 +81,34 @@ let template = [{
   }, {
     type: 'separator'
   }, {
-    label: 'App Menu Demo',
+    label: '應用程式選單範例',
     click: function (item, focusedWindow) {
       if (focusedWindow) {
         const options = {
           type: 'info',
-          title: 'Application Menu Demo',
-          buttons: ['Ok'],
-          message: 'This demo is for the Menu section, showing how to create a clickable menu item in the application menu.'
+          title: '應用程式選單範例',
+          buttons: ['確定'],
+          message: '本範例適用於「選單」章節，示範如何在應用程式選單中建立可點選的選單項目。'
         }
         electron.dialog.showMessageBox(focusedWindow, options, function () {})
       }
     }
   }]
 }, {
-  label: 'Window',
+  label: '視窗',
   role: 'window',
   submenu: [{
-    label: 'Minimize',
+    label: '最小化',
     accelerator: 'CmdOrCtrl+M',
     role: 'minimize'
   }, {
-    label: 'Close',
+    label: '關閉',
     accelerator: 'CmdOrCtrl+W',
     role: 'close'
   }, {
     type: 'separator'
   }, {
-    label: 'Reopen Window',
+    label: '重新開啟視窗',
     accelerator: 'CmdOrCtrl+Shift+T',
     enabled: false,
     key: 'reopenMenuItem',
@@ -118,10 +117,10 @@ let template = [{
     }
   }]
 }, {
-  label: 'Help',
+  label: '幫助',
   role: 'help',
   submenu: [{
-    label: 'Learn More',
+    label: '了解更多',
     click: function () {
       electron.shell.openExternal('http://electron.atom.io')
     }
@@ -133,21 +132,21 @@ function addUpdateMenuItems (items, position) {
 
   const version = electron.app.getVersion()
   let updateItems = [{
-    label: `Version ${version}`,
+    label: `版本 ${version}`,
     enabled: false
   }, {
-    label: 'Checking for Update',
+    label: '正在檢查更新',
     enabled: false,
     key: 'checkingForUpdate'
   }, {
-    label: 'Check for Update',
+    label: '檢查更新',
     visible: false,
     key: 'checkForUpdate',
     click: function () {
       require('electron').autoUpdater.checkForUpdates()
     }
   }, {
-    label: 'Restart and Install Update',
+    label: '重新啟動並安裝更新',
     enabled: true,
     visible: false,
     key: 'restartToUpdate',
@@ -181,31 +180,31 @@ if (process.platform === 'darwin') {
   template.unshift({
     label: name,
     submenu: [{
-      label: `About ${name}`,
+      label: `關於 ${name}`,
       role: 'about'
     }, {
       type: 'separator'
     }, {
-      label: 'Services',
+      label: '服務',
       role: 'services',
       submenu: []
     }, {
       type: 'separator'
     }, {
-      label: `Hide ${name}`,
+      label: `隱藏 ${name}`,
       accelerator: 'Command+H',
       role: 'hide'
     }, {
-      label: 'Hide Others',
+      label: '隱藏其他',
       accelerator: 'Command+Alt+H',
       role: 'hideothers'
     }, {
-      label: 'Show All',
+      label: '全部顯示',
       role: 'unhide'
     }, {
       type: 'separator'
     }, {
-      label: 'Quit',
+      label: '結束',
       accelerator: 'Command+Q',
       click: function () {
         app.quit()
@@ -213,11 +212,11 @@ if (process.platform === 'darwin') {
     }]
   })
 
-  // Window menu.
+  // 視窗選單
   template[3].submenu.push({
     type: 'separator'
   }, {
-    label: 'Bring All to Front',
+    label: '全部提到最上層',
     role: 'front'
   })
 

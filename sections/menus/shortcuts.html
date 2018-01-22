@@ -4,25 +4,24 @@
       <div class="section-wrapper">
         <h1>
           <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-menu"></use></svg>
-          Keyboard Shortcuts
+          鍵盤快速鍵
         </h1>
 
-        <h3>The <code>globalShortcut</code> and <code>Menu</code> modules can be used to define keyboard shortcuts.</h3>
+        <h3><code>globalShortcut</code> 和 <code>Menu</code> 模組可用來定義鍵盤快速鍵。</h3>
 
         <p>
-          In Electron, keyboard shortcuts are called accelerators.
-          They can be assigned to actions in your application's Menu,
-          or they can be assigned globally so they'll be triggered even when
-          your app doesn't have keyboard focus.
+          在 Electron 中，鍵盤捷徑被稱為快速鍵（Accelerator）。
+          可以將它們指派給應用程式選單中的操作，也可以將其指派給全域，
+          所以即使在應用程式沒有取得鍵盤焦點時，也會觸發它們。
         </p>
 
         <p>
-          Open the full documentation for the
-          <a class="u-exlink" href="http://electron.atom.io/docs/api/menu">Menu</a>,
-          <a class="u-exlink" href="http://electron.atom.io/docs/api/accelerator">Accelerator</a>,
-          and
-          <a class="u-exlink" href="http://electron.atom.io/docs/api/global-shortcut">globalShortcut</a>
-          APIs in your browser.
+          在瀏覽器查看
+          <a class="u-exlink" href="http://electron.atom.io/docs/api/menu">選單</a>、
+          <a class="u-exlink" href="http://electron.atom.io/docs/api/accelerator">快速鍵</a>、
+          和
+          <a class="u-exlink" href="http://electron.atom.io/docs/api/global-shortcut">全域快速鍵</a>
+          的完整 API 文件
         </p>
 
       </div>
@@ -30,31 +29,27 @@
 
     <div class="demo">
       <div class="demo-wrapper">
-        <button id="shortcuts-demo-toggle" class="js-container-target demo-toggle-button">Register a global keyboard shortcut
-          <div class="demo-meta u-avoid-clicks">Supports: Win, macOS, Linux <span class="demo-meta-divider">|</span> Process: Main</div>
+        <button id="shortcuts-demo-toggle" class="js-container-target demo-toggle-button">註冊一個全域鍵盤快速鍵
+          <div class="demo-meta u-avoid-clicks">支援作業系統：Win、macOS、Linux <span class="demo-meta-divider">|</span> 程序：Main</div>
         </button>
         <div class="demo-box">
           <p>
-            To try this demo, press <kbd class="normalize-to-platform">CommandOrControl+Alt+K</kbd> on your keyboard.
+            要試試此範例，請在鍵盤按下 <kbd class="normalize-to-platform">CommandOrControl+Alt+K</kbd>。
           </p>
 
           <p>
-            Global shortcuts are detected even when the app doesn't have
-            keyboard focus, and they must be registered after the app's
-            `ready` event is emitted.
+            即使應用程式沒有取得鍵盤焦點，也會偵測到全域快速鍵，而且它們必須在應用程式的「ready」事件發出後註冊。
           </p>
 
-          <h5>Main Process</h5>
+          <h5>主程序</h5>
           <pre><code data-path="main-process/menus/shortcuts.js"></code></pre>
 
           <div class="demo-protip">
-            <h2>ProTip</h2>
-            <strong>Avoid overriding system-wide keyboard shortcuts.</strong>
+            <h2>小提示</h2>
+            <strong>避免覆蓋系統的鍵盤快速鍵。</strong>
             <p>
-              When registering global shortcuts, it's important to be aware of
-              existing defaults in the target operating system, so as not to
-              override any existing behaviors. For an overview of each
-              operating system's keyboard shortcuts, view these documents:
+              當註冊全域快速鍵時，請務必注意目標作業系統中的現有預設值，以免覆蓋任何現有的行為。
+              有關每個作業系統鍵盤快速鍵的概述，請查看以下文件：
             </p>
 
             <ul>

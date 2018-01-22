@@ -1,50 +1,48 @@
-# <img src="https://cloud.githubusercontent.com/assets/378023/15172388/b2b81950-1790-11e6-9a7c-ccc39912bb3a.png" width="60px" align="center" alt="Electron API Demos icon"> Electron API Demos
+# <img src="assets/app-icon/png/128.png" width="60px" align="center" alt="Electron API Demos icon"> Electron API 範例
 
 [![Build Status](https://travis-ci.org/electron/electron-api-demos.svg?branch=master)](https://travis-ci.org/electron/electron-api-demos)
 [![JavaScript Standard Style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com)
 
-This is a desktop app that interactively and with sample code demonstrates core features of the [Electron](http://electron.atom.io) API. It's built with Electron, too, of course. This app works on Windows, macOS and Linux operating systems.
+> 原始專案：[electron-api-demos](https://github.com/electron/electron-api-demos)
+>
+> 翻譯：[Calvert](https://github.com/CalvertYang) 及 [PJChen](https://github.com/pjchender)
 
-Use this app to see what you can do with Electron and use the source code to learn how to create a basic Electron app.
+這是一個互動式的桌面應用程式，程式碼範例示範了 [Electron](http://electron.atom.io) API的核心功能。當然，它也是用 Electron 建置的。本應用程式適用於 Windows、macOS 和 Linux 作業系統。
 
-![Electron API Demos Screenshots](https://cloud.githubusercontent.com/assets/378023/15016148/ae06cc80-124a-11e6-80dd-076d83e492f6.png)
+透過這個應用程式，看看你可以用 Electron 做什麼，並使用原始碼來學習如何建立一個基本的 Electron 應用程式。
+
+![Electron API Demos Screenshots](assets/screenshot.png)
 
 ---
 
-This project adheres to the Contributor Covenant [code of conduct](CODE_OF_CONDUCT.md).
-By participating, you are expected to uphold this code. Please report unacceptable
-behavior to electron@github.com.
+本專案遵守貢獻者公約[行為準則](CODE_OF_CONDUCT.md)。
+參與過程中，你必須遵守此準則。若有不能接受的行為，請回報給 electron@github.com。
 
-Follow [@ElectronJS](https://twitter.com/electronjs) on Twitter for important
-announcements. Visit the [electron website](http://electron.atom.io).
+在 Twitter 跟隨 [@ElectronJS](https://twitter.com/electronjs) 以獲取重要公告，或訪問 [electron 網站](http://electron.atom.io)。
 
-## Using
+## 使用
 
-You can [download the latest release](https://github.com/electron/electron-api-demos/releases) for your operating system or build it yourself (see below).
+你可以針對你的作業系統下載[最新發行版本（英文）](https://github.com/electron/electron-api-demos/releases)或自行建置（詳見下方）。
 
-## Building
+## 建置
 
-You'll need [Node.js](https://nodejs.org) installed on your computer in order to build this app.
+你需要在電腦上安裝 [Node.js](https://nodejs.org) 才能建置此應用程式。
 
 ```bash
-$ git clone https://github.com/electron/electron-api-demos
-$ cd electron-api-demos
+$ git clone https://github.com/CalvertYang/electron-api-demos-zh-Hant.git
+$ cd electron-api-demos-zh-Hant
 $ npm install
 $ npm start
 ```
 
-If you don't wish to clone, you can [download the source code](https://github.com/electron/electron-api-demos/archive/master.zip).
+如果你不想 clone，你可以[下載原始碼](https://github.com/CalvertYang/electron-api-demos-zh-Hant/archive/master.zip)。
 
-For easier developing you can launch the app in fullscreen with DevTools open:
+為了方便開發，你可以使用 DevTools 以全螢幕模式啟動應用程式：
 
 ```bash
 $ npm run dev
 ```
 
-## Extending
+## 擴充
 
- [Read the docs](docs.md) to learn more about how this app is built or how to [add a new demo](docs.md#add-a-section-or-demo).
-
-## Translations
-
-A Chinese translation of this app is available at [`fuchao2012/zh-cn-Electron-API-Demos`](https://github.com/fuchao2012/zh-cn-Electron-API-Demos). Note: this version is maintained by outside contributors and may not always be in sync with this version.
+ [閱讀文件](docs.md)以了解更多關於如何建立這個應用程式或如何[增加一個新範例](docs.md#加入一個新章節或範例)。

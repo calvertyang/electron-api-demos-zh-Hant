@@ -4,36 +4,36 @@
       <div class="section-wrapper">
         <h1>
           <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-native-ui"></use></svg>
-          Use system dialogs
+          使用系統對話框
         </h1>
-        <h3>The <code>dialog</code> module in Electron allows you to use native system dialogs for opening files or directories, saving a file or displaying informational messages.</h3>
+        <h3>Electron 中的 <code>dialog</code> 模組允許你使用原生系統對話框來開啟檔案或目錄、儲存檔案或顯示訊息。</h3>
 
-        <p>This is a main process module because this process is more efficient with native utilities and it allows the call to happen without interupting the visible elements in your page's renderer process.</p>
+        <p>這是一個主程序模組，因為這個程序使用原生工具程式更有效率，且它允許在呼叫的同時不會中斷頁面渲染器程序中的可見元素。</p>
 
-        <p>Open the <a href="http://electron.atom.io/docs/api/dialog/">full API documentation<span class="u-visible-to-screen-reader">(opens in new window)</span></a> in your browser.</p>
+        <p>在瀏覽器查看<a href="http://electron.atom.io/docs/api/dialog/">完整的 API 文件<span class="u-visible-to-screen-reader">(在新視窗開啟)</span></a>。</p>
       </div>
     </header>
 
     <div class="demo">
       <div class="demo-wrapper">
-        <button id="open-file-demo-toggle" class="js-container-target demo-toggle-button">Open a File or Directory
-          <div class="demo-meta u-avoid-clicks">Supports: Win, macOS, Linux <span class="demo-meta-divider">|</span> Process: Main</div>
+        <button id="open-file-demo-toggle" class="js-container-target demo-toggle-button">開啟檔案或目錄
+          <div class="demo-meta u-avoid-clicks">支援作業系統：Win、macOS、Linux <span class="demo-meta-divider">|</span> 程序：Main</div>
         </button>
         <div class="demo-box">
           <div class="demo-controls">
-            <button class="demo-button" id="select-directory">View Demo</button>
+            <button class="demo-button" id="select-directory">查看範例</button>
             <span class="demo-response" id="selected-file"></span>
           </div>
-          <p>In this demo, the <code>ipc</code> module is used to send a message from the renderer process instructing the main process to launch the open file (or directory) dialog. If a file is selected, the main process can send that information back to the renderer process.</p>
-          <h5>Renderer Process</h5>
+          <p>本範例中，<code>ipc</code> 模組被渲染器程序用來傳送訊息，通知主程序來開啟檔案（或目錄）對話框。如果選擇了檔案，主程序可以將該訊息送回渲染器程序。</p>
+          <h5>渲染器程序</h5>
           <pre><code data-path="renderer-process/native-ui/dialogs/open-file.js"></code></pre>
-          <h5>Main Process</h5>
+          <h5>主程序</h5>
           <pre><code data-path="main-process/native-ui/dialogs/open-file.js"></code></pre>
 
           <div class="demo-protip">
-            <h2>ProTip</h2>
-            <strong>The sheet-style dialog on macOS.</strong>
-            <p>On macOS you can choose between a "sheet" dialog or a default dialog. The sheet version descends from the top of the window. To use sheet version, pass the <code>window</code> as the first argument in the dialog method.</p>
+            <h2>小提示</h2>
+            <strong>macOS 上的工作表樣式對話框。</strong>
+            <p>在 macOS 上，你可以選擇「工作表」對話框或預設對話框。工作表版本是從視窗的頂部下降。要使用工作表版本，請將 <code>window</code> 作為對話框方法中的第一個參數傳入。</p>
             <pre><code class="language-js">const ipc = require('electron').ipcMain
 const dialog = require('electron').dialog
 const BrowserWindow = require('electron').BrowserWindow
@@ -50,19 +50,19 @@ ipc.on('open-file-dialog-sheet', function (event) {
 
     <div class="demo">
       <div class="demo-wrapper">
-        <button id="error-dialog-demo-toggle" class="js-container-target demo-toggle-button">Error Dialog
-          <div class="demo-meta u-avoid-clicks">Supports: Win, macOS, Linux <span class="demo-meta-divider">|</span> Process: Main</div>
+        <button id="error-dialog-demo-toggle" class="js-container-target demo-toggle-button">錯誤對話框
+          <div class="demo-meta u-avoid-clicks">支援作業系統：Win、macOS、Linux <span class="demo-meta-divider">|</span> 程序：Main</div>
         </button>
         <div class="demo-box">
           <div class="demo-controls">
-            <button id="error-dialog" class="demo-button">View Demo</button>
+            <button id="error-dialog" class="demo-button">查看範例</button>
           </div>
-          <p>In this demo, the <code>ipc</code> module is used to send a message from the renderer process instructing the main process to launch the error dialog.</p>
+          <p>本範例中，<code>ipc</code> 模組被渲染器程序用來傳送訊息，通知主程序來開啟錯誤對話框。</p>
 
-          <p>You can use an error dialog before the app's <code>ready</code> event, which is useful for showing errors upon startup.</p>
-          <h5>Renderer Process</h5>
+          <p>你可以在應用程式的 <code>ready</code> 事件之前使用錯誤對話框，這對於在啟動時顯示錯誤很有用。</p>
+          <h5>渲染器程序</h5>
           <pre><code data-path="renderer-process/native-ui/dialogs/error.js"></code></pre>
-          <h5>Main Process</h5>
+          <h5>主程序</h5>
           <pre><code data-path="main-process/native-ui/dialogs/error.js"></code></pre>
         </div>
       </div>
@@ -70,22 +70,22 @@ ipc.on('open-file-dialog-sheet', function (event) {
 
     <div class="demo">
       <div class="demo-wrapper">
-        <button id="information-dialog-demo-toggle" class="js-container-target demo-toggle-button">Information Dialog
-          <div class="demo-meta u-avoid-clicks">Supports: Win, macOS, Linux <span class="demo-meta-divider">|</span> Process: Main</div>
+        <button id="information-dialog-demo-toggle" class="js-container-target demo-toggle-button">訊息對話框
+          <div class="demo-meta u-avoid-clicks">支援作業系統：Win、macOS、Linux <span class="demo-meta-divider">|</span> 程序：Main</div>
         </button>
         <div class="demo-box">
           <div class="demo-controls">
-            <button class="demo-button" id="information-dialog">View Demo</button>
+            <button class="demo-button" id="information-dialog">查看範例</button>
             <span class="demo-response" id="info-selection"></span>
           </div>
-          <p>In this demo, the <code>ipc</code> module is used to send a message from the renderer process instructing the main process to launch the information dialog. Options may be provided for responses which can then be relayed back to the renderer process.</p>
+          <p>本範例中，the <code>ipc</code> 模組被渲染器程序用來傳送訊息，通知主程序來開啟訊息對話框。可以提供用於回應的選項，回應會被傳送回渲染器程序。</p>
 
-          <p>Note: The <code>title</code> property is not displayed in macOS.</p>
+          <p>注意：<code>title</code> 屬性不會顯示在 macOS 中。</p>
 
-          <p>An information dialog can contain an icon, your choice of buttons, title and message.</p>
-          <h5>Renderer Process</h5>
+          <p>訊息對話框可以包含圖示、選擇的按鈕、標題和訊息。</p>
+          <h5>渲染器程序</h5>
           <pre><code data-path="renderer-process/native-ui/dialogs/information.js"></code></pre>
-          <h5>Main Process</h5>
+          <h5>主程序</h5>
           <pre><code data-path="main-process/native-ui/dialogs/information.js"></code></pre>
         </div>
       </div>
@@ -93,18 +93,18 @@ ipc.on('open-file-dialog-sheet', function (event) {
 
     <div class="demo">
       <div class="demo-wrapper">
-        <button id="save-dialog-demo-toggle" class="js-container-target demo-toggle-button">Save Dialog
-          <div class="demo-meta u-avoid-clicks">Supports: Win, macOS, Linux <span class="demo-meta-divider">|</span> Process: Main</div>
+        <button id="save-dialog-demo-toggle" class="js-container-target demo-toggle-button">儲存對話框
+          <div class="demo-meta u-avoid-clicks">支援作業系統：Win、macOS、Linux <span class="demo-meta-divider">|</span> 程序：Main</div>
         </button>
         <div class="demo-box">
           <div class="demo-controls">
-            <button class="demo-button" id="save-dialog">View Demo</button>
+            <button class="demo-button" id="save-dialog">查看範例</button>
             <span class="demo-response" id="file-saved"></span>
           </div>
-          <p>In this demo, the <code>ipc</code> module is used to send a message from the renderer process instructing the main process to launch the save dialog. It returns the path selected by the user which can be relayed back to the renderer process.</p>
-          <h5>Renderer Process</h5>
+          <p>本範例中，the <code>ipc</code> 模組被渲染器程序用來傳送訊息，通知主程序來開啟儲存對話框。它返回使用者選擇的路徑，並可以將其傳送回渲染器程序。</p>
+          <h5>渲染器程序</h5>
           <pre><code data-path="renderer-process/native-ui/dialogs/save.js"></code></pre>
-          <h5>Main Process</h5>
+          <h5>主程序</h5>
           <pre><code data-path="main-process/native-ui/dialogs/save.js"></code></pre>
         </div>
       </div>

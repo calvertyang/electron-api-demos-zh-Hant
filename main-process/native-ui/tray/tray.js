@@ -12,12 +12,12 @@ ipc.on('put-in-tray', function (event) {
   const iconPath = path.join(__dirname, iconName)
   appIcon = new Tray(iconPath)
   const contextMenu = Menu.buildFromTemplate([{
-    label: 'Remove',
+    label: '移除',
     click: function () {
       event.sender.send('tray-removed')
     }
   }])
-  appIcon.setToolTip('Electron Demo in the tray.')
+  appIcon.setToolTip('在通知列的 Electron 範例。')
   appIcon.setContextMenu(contextMenu)
 })
 

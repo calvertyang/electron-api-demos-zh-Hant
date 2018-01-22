@@ -4,31 +4,31 @@
       <div class="section-wrapper">
         <h1>
           <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-communication"></use></svg>
-          Communication between processes
+          在兩個程序間進行通訊
         </h1>
-        <h3>The <code>ipc</code> (inter-process communication) module allows you to send and receive synchronous and asynchronous messages between the main and renderer processes.</h3>
+        <h3><code>ipc</code>（程序間通訊）模組允許你在主程序和渲染器程序間傳送及接收同步和非同步訊息。</h3>
 
-        <p>There is a version of this module available for both processes: <code>ipcMain</code> and <code>ipcRenderer</code>.</p>
-        <p>Open the full API documentation for the <a href="http://electron.atom.io/docs/api/ipc-main">main process<span class="u-visible-to-screen-reader">(opens in new window)</span></a> and the <a href="http://electron.atom.io/docs/api/ipc-renderer/">renderer process<span class="u-visible-to-screen-reader">(opens in new window)</span></a> in your browser.</p>
+        <p>此模組有一個可適用於這兩個程序的版本：<code>ipcMain</code> 和 <code>ipcRenderer</code>。</p>
+        <p>在瀏覽器查看<a href="http://electron.atom.io/docs/api/ipc-main">主程序<span class="u-visible-to-screen-reader">(在新視窗開啟)</span></a>和<a href="http://electron.atom.io/docs/api/ipc-renderer/">渲染器程序<span class="u-visible-to-screen-reader">(在新視窗開啟)</span></a>的完整 API 文件。</p>
       </div>
     </header>
 
     <div class="demo">
       <div class="demo-wrapper">
-        <button id="async-msg-demo-toggle" class="js-container-target demo-toggle-button">Asynchronous messages
-          <div class="demo-meta u-avoid-clicks">Supports: Win, macOS, Linux <span class="demo-meta-divider">|</span> Process: Both</div>
+        <button id="async-msg-demo-toggle" class="js-container-target demo-toggle-button">非同步訊息
+          <div class="demo-meta u-avoid-clicks">支援作業系統：Win、macOS、Linux <span class="demo-meta-divider">|</span> 程序：Both</div>
         </button>
         <div class="demo-box">
           <div class="demo-controls">
             <button class="demo-button" id="async-msg">Ping</button>
             <span class="demo-response" id="async-reply"></span>
           </div>
-          <p>Using <code>ipc</code> to send messages between processes asynchronously is the preferred method since it will return when finished without blocking other operations in the same process.</p>
+          <p>使用 <code>ipc</code> 模組在程序間傳送非同步訊息是首選方法，因為它會在完成時返回，而不會阻斷同一程序中的其它操作。</p>
 
-          <p>This example sends a "ping" from this process (renderer) to the main process. The main process then replies with "pong".</p>
-          <h5>Renderer Process</h5>
+          <p>這個範例從此程序（渲染器）傳送了「ping」到主程序，然後主程序回應「pong」。</p>
+          <h5>渲染器程序</h5>
           <pre><code data-path="renderer-process/communication/async-msg.js"></code></pre>
-          <h5>Main Process</h5>
+          <h5>主程序</h5>
           <pre><code data-path="main-process/communication/async-msg.js"></code></pre>
         </div>
       </div>
@@ -36,19 +36,19 @@
 
     <div class="demo">
       <div class="demo-wrapper">
-        <button id="sync-msg-demo-toggle" class="js-container-target demo-toggle-button">Synchronous messages
-          <div class="demo-meta u-avoid-clicks">Supports: Win, macOS, Linux <span class="demo-meta-divider">|</span> Process: Both</div>
+        <button id="sync-msg-demo-toggle" class="js-container-target demo-toggle-button">同步訊息
+          <div class="demo-meta u-avoid-clicks">支援作業系統：Win、macOS、Linux <span class="demo-meta-divider">|</span> 程序：Both</div>
         </button>
         <div class="demo-box">
           <div class="demo-controls">
             <button class="demo-button" id="sync-msg">Ping</button>
             <span class="demo-response" id="sync-reply"></span>
           </div>
-          <p>You can use the <code>ipc</code> module to send synchronous messages between processes as well, but note that the synchronous nature of this method means that it <b>will block</b> other operations while completing its task.</p>
-          <p>This example sends a synchronous message, "ping", from this process (renderer) to the main process. The main process then replies with "pong".</p>
-          <h5>Renderer Process</h5>
+          <p>可以使用 <code>ipc</code> 模組在程序間傳送同步訊息，但請注意，此方法的同步特性代表它在完成任務前<b>會阻斷</b>其它操作。</p>
+          <p>這個範例從此程序（渲染器）傳送了同步訊息「ping」到主程序，然後主程序回應「pong」。</p>
+          <h5>渲染器程序</h5>
           <pre><code data-path="renderer-process/communication/sync-msg.js"></code></pre>
-          <h5>Main Process</h5>
+          <h5>主程序</h5>
           <pre><code data-path="main-process/communication/sync-msg.js"></code></pre>
         </div>
       </div>
@@ -56,20 +56,20 @@
 
     <div class="demo">
       <div class="demo-wrapper">
-        <button id="invis-msg-demo-toggle" class="js-container-target demo-toggle-button">Communicate with an invisible window
-          <div class="demo-meta u-avoid-clicks">Supports: Win, macOS, Linux <span class="demo-meta-divider">|</span> Process: Both</div>
+        <button id="invis-msg-demo-toggle" class="js-container-target demo-toggle-button">與隱藏視窗通訊
+          <div class="demo-meta u-avoid-clicks">支援作業系統：Win、macOS、Linux <span class="demo-meta-divider">|</span> 程序：Both</div>
         </button>
         <div class="demo-box">
           <div class="demo-controls">
-            <button class="demo-button" id="invis-msg">Compute Factorial</button>
+            <button class="demo-button" id="invis-msg">計算階乘</button>
             <span class="demo-response" id="invis-reply"></span>
           </div>
-          <p>It is common practice to create a new invisible browser window (renderer process) in order to run tasks without impacting performance in the main app's window.</p>
-          <p>In this example we use the <code>remote</code> module to create a new invisible browser window from this renderer process. When the new page is loaded we send a message with <code>ipc</code> that the new window is listening for.</p>
-          <p>The new window then computes the factorial and sends the result to be received by this, the original, window and added to the page above.</p>
-          <h5>Renderer Process</h5>
+          <p>建立一個隱藏瀏覽器視窗（渲染器程序）是一個常見的做法，以便在不影響主應用程式視窗效能的情況下執行任務。</p>
+          <p>在這個範例，我們使用 <code>remote</code> 模組從這個渲染器程序來建立一個新的隱藏的瀏覽器視窗。當新頁面載入時，我們用 <code>ipc</code> 傳送一個訊息給正在監聽的新視窗。</p>
+          <p>然後新視窗計算階乘，傳送結果回原始視窗，並加入到上方的頁面。</p>
+          <h5>渲染器程序</h5>
           <pre><code data-path="renderer-process/communication/invisible-msg.js"></code></pre>
-          <h5>Invisible Window Page HTML</h5>
+          <h5>隱藏視窗頁面 HTML</h5>
           <pre><code data-path="sections/communication/invisible.html"></code></pre>
         </div>
       </div>

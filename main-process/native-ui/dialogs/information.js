@@ -4,9 +4,9 @@ const dialog = require('electron').dialog
 ipc.on('open-information-dialog', function (event) {
   const options = {
     type: 'info',
-    title: 'Information',
-    message: "This is an information dialog. Isn't it nice?",
-    buttons: ['Yes', 'No']
+    title: '訊息',
+    message: "這是一個訊息對話框。很棒對吧？",
+    buttons: ['是', '否']
   }
   dialog.showMessageBox(options, function (index) {
     event.sender.send('information-dialog-selection', index)

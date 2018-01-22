@@ -2,5 +2,5 @@ const ipc = require('electron').ipcMain
 const dialog = require('electron').dialog
 
 ipc.on('open-error-dialog', function (event) {
-  dialog.showErrorBox('An Error Message', 'Demonstrating an error message.')
+  dialog.showErrorBox('錯誤訊息', '錯誤訊息範例')
 })

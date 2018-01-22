@@ -7,9 +7,9 @@ app.on('ready', function () {
   globalShortcut.register('CommandOrControl+Alt+K', function () {
     dialog.showMessageBox({
       type: 'info',
-      message: 'Success!',
-      detail: 'You pressed the registered global shortcut keybinding.',
-      buttons: ['OK']
+      message: '成功！',
+      detail: '你按下了全域註冊綁定的快速鍵。',
+      buttons: ['確定']
     })
   })
 })

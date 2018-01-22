@@ -4,27 +4,27 @@
       <div class="section-wrapper">
         <h1>
           <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-windows"></use></svg>
-          Handling Window Crashes and Hangs
+          處理視窗崩潰和沒有回應
         </h1>
-        <h3>The <code>BrowserWindow</code> module will emit events when the renderer process crashes or hangs. You can listen for these events and give users the chance to reload, wait or close that window.</h3>
+        <h3>當渲染器程序崩潰或沒有回應時，<code>BrowserWindow</code> 模組將會發出事件。你可以監聽這些事件，並讓使用者有重新載入、等待或關閉視窗的機會。</h3>
 
-        <p>Open the <a href="http://electron.atom.io/docs/api/browser-window">full API documentation<span class="u-visible-to-screen-reader">(opens in new window)</span></a> in your browser.</p>
+        <p>在瀏覽器查看<a href="http://electron.atom.io/docs/api/browser-window">完整的 API 文件<span class="u-visible-to-screen-reader">(在新視窗開啟)</span></a>。</p>
       </div>
     </header>
 
     <div class="demo">
       <div class="demo-wrapper">
-        <button id="new-window-crashes-demo-toggle" class="js-container-target demo-toggle-button">Relaunch window after the process crashes
-          <div class="demo-meta u-avoid-clicks">Supports: Win, macOS, Linux <span class="demo-meta-divider">|</span> Process: Main</div>
+        <button id="new-window-crashes-demo-toggle" class="js-container-target demo-toggle-button">程序崩潰後重新啟動視窗
+          <div class="demo-meta u-avoid-clicks">支援作業系統：Win、macOS、Linux <span class="demo-meta-divider">|</span> 程序：Main</div>
         </button>
         <div class="demo-box">
           <div class="demo-controls">
-            <button class="demo-button" id="process-crash">View Demo</button>
+            <button class="demo-button" id="process-crash">查看範例</button>
           </div>
-          <p>In this demo we create a new window (via the <code>remote</code> module) and provide a link that will force a crash using <code>process.crash()</code>.</p>
-          <p>The window is listening for the crash event and when the event occurs it prompts the user with two options: reload or close.</p>
+          <p>在這個範例，我們建立了一個新視窗（透過 <code>remote</code> 模組）並提供了一個使用 <code>process.crash()</code> 方法讓程序強制崩潰的連結。</p>
+          <p>該視窗正在監聽崩潰事件，當事件發生時，它會提示使用者兩個選項：重新載入或關閉。</p>
 
-          <h5>Renderer Process</h5>
+          <h5>渲染器程序</h5>
           <pre><code data-path="renderer-process/windows/process-crash.js"></code></pre>
         </div>
       </div>
@@ -32,25 +32,25 @@
 
     <div class="demo">
       <div class="demo-wrapper">
-        <button id="new-window-hangs-demo-toggle" class="js-container-target demo-toggle-button">Relaunch window after the process hangs
-          <div class="demo-meta u-avoid-clicks">Supports: Win, macOS, Linux <span class="demo-meta-divider">|</span> Process: Main</div>
+        <button id="new-window-hangs-demo-toggle" class="js-container-target demo-toggle-button">程序沒有回應後重新啟動視窗
+          <div class="demo-meta u-avoid-clicks">支援作業系統：Win、macOS、Linux <span class="demo-meta-divider">|</span> 程序：Main</div>
         </button>
         <div class="demo-box">
           <div class="demo-controls">
-            <button class="demo-button" id="process-hang">View Demo</button>
+            <button class="demo-button" id="process-hang">查看範例</button>
           </div>
-          <p>In this demo we create a new window (via the <code>remote</code> module) and provide a link that will force the process to hang using <code>process.hang()</code>.</p>
-          <p>The window is listening for the process to become officially unresponsive (this can take up to 30 seconds). When this event occurs it prompts the user with two options: reload or close.</p>
+          <p>在這個範例，我們建立了一個新視窗（透過 <code>remote</code> 模組）並提供了一個使用 <code>process.hang()</code> 方法讓程序沒有回應的連結。</p>
+          <p>該視窗正在監聽程序是否真正沒有回應（可能需要 30 秒或更久）。當事件發生時，它會提示使用者兩個選項：重新載入或關閉。</p>
 
-          <h5>Renderer Process</h5>
+          <h5>渲染器程序</h5>
           <pre><code data-path="renderer-process/windows/process-hang.js"></code></pre>
 
           <div class="demo-protip">
-            <h2>ProTip</h2>
-            <strong>Wait for the process to become responsive again.</strong>
-            <p>A third option in the case of a process that is hanging is to wait and see if the problem resolves, allowing the process to become responsive again. To do this, use the <code>BrowserWindow</code> event 'responsive' as shown below.</p>
+            <h2>小提示</h2>
+            <strong>等待程序再次回應。</strong>
+            <p>對於沒有回應的程序，第三個選擇是等待並查看問題是否解決，允許程序再次回應。為此，請使用 <code>BrowserWindow</code> 的「responsive」事件，如下所示：</p>
             <pre><code class="language-js">win.on('responsive', function () {
-  // Do something when the window is responsive again
+  // 當視窗再次回應時做些什麼
 })</code></pre>
           </div>
         </div>

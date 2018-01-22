@@ -6,7 +6,7 @@ const ipc = electron.ipcMain
 const app = electron.app
 
 const menu = new Menu()
-menu.append(new MenuItem({ label: 'Hello' }))
+menu.append(new MenuItem({ label: '你好' }))
 menu.append(new MenuItem({ type: 'separator' }))
 menu.append(new MenuItem({ label: 'Electron', type: 'checkbox', checked: true }))
 

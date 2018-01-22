@@ -10,12 +10,12 @@ trayBtn.addEventListener('click', function (event) {
     ipc.send('remove-tray')
   } else {
     trayOn = true
-    const message = 'Click demo again to remove.'
+    const message = '再次點選「查看範例」來移除。'
     document.getElementById('tray-countdown').innerHTML = message
     ipc.send('put-in-tray')
   }
 })
-// Tray removed from context menu on icon
+// 從圖示的快顯選單移除
 ipc.on('tray-removed', function () {
   ipc.send('remove-tray')
   trayOn = false

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
   <meta charset="utf-8">
 
@@ -32,67 +32,67 @@
 
   <nav class="nav js-nav">
     <header class="nav-header">
-      <h1 class="nav-title">Electron <strong>API Demos</strong></h1>
+      <h1 class="nav-title">Electron <strong>API 範例</strong></h1>
       <svg class="nav-header-icon"><use xlink:href="assets/img/icons.svg#icon-electron"></use></svg>
     </header>
 
     <div class="nav-item u-category-windows">
       <h5 class="nav-category">
         <svg class="nav-icon"><use xlink:href="assets/img/icons.svg#icon-windows"></use></svg>
-        Windows
+        視窗
       </h5>
-      <button type="button" id="button-windows" data-section="windows" class="nav-button">Create and manage <em>windows</em></button>
-      <button type="button" id="button-crash-hang" data-section="crash-hang" class="nav-button">Handling window <em>crashes and hangs</em></button>
+      <button type="button" id="button-windows" data-section="windows" class="nav-button">建立並管理<em>視窗</em></button>
+      <button type="button" id="button-crash-hang" data-section="crash-hang" class="nav-button">處理視窗<em>崩潰和沒有回應</em></button>
     </div>
 
     <div class="nav-item u-category-menu">
       <h5 class="nav-category">
         <svg class="nav-icon"><use xlink:href="assets/img/icons.svg#icon-menu"></use></svg>
-        Menus
+        選單
       </h5>
-      <button type="button" id="button-menus" data-section="menus" class="nav-button">Customize <em>menus</em> </button>
-      <button type="button" id="button-shortcuts" data-section="shortcuts" class="nav-button">Register keyboard <em>shortcuts</em></button>
+      <button type="button" id="button-menus" data-section="menus" class="nav-button">自訂<em>選單</em></button>
+      <button type="button" id="button-shortcuts" data-section="shortcuts" class="nav-button">設定鍵盤<em>快速鍵</em></button>
     </div>
 
     <div class="nav-item u-category-native-ui">
       <h5 class="nav-category">
         <svg class="nav-icon"><use xlink:href="assets/img/icons.svg#icon-native-ui"></use></svg>
-        Native User Interface</h5>
-      <button type="button" id="button-ex-links-file-manager" data-section="ex-links-file-manager" class="nav-button">Open <em>external links</em> or system <em>file manager</em></button>
-      <button type="button" id="button-notifications" data-section="notifications" class="nav-button"> Notifications with and without custom <em>image</em></button>
-      <button type="button" id="button-dialogs" data-section="dialogs" class="nav-button">Use system <em>dialogs</em></button>
-      <button type="button" id="button-tray" data-section="tray" class="nav-button">Put your app in the <em>tray</em></button>
+        原生使用者介面</h5>
+      <button type="button" id="button-ex-links-file-manager" data-section="ex-links-file-manager" class="nav-button">開啟<em>外部連結</em>或系統<em>檔案管理員</em></button>
+      <button type="button" id="button-notifications" data-section="notifications" class="nav-button">基本或帶有<em>圖片</em>的通知</button>
+      <button type="button" id="button-dialogs" data-section="dialogs" class="nav-button">使用系統<em>對話框</em></button>
+      <button type="button" id="button-tray" data-section="tray" class="nav-button">將應用程式放在<em>通知列</em></button>
     </div>
 
     <div class="nav-item u-category-communication">
       <h5 class="nav-category">
         <svg class="nav-icon"><use xlink:href="assets/img/icons.svg#icon-communication"></use></svg>
-        Communication
+        通訊
       </h5>
-      <button type="button" id="button-ipc" data-section="ipc" class="nav-button">Communicate between the <em>two processes</em></button>
+      <button type="button" id="button-ipc" data-section="ipc" class="nav-button">在<em>兩個程序</em>間進行通訊</button>
     </div>
 
     <div class="nav-item u-category-system">
       <h5 class="nav-category">
         <svg class="nav-icon"><use xlink:href="assets/img/icons.svg#icon-system"></use></svg>
-        System
+        系統
       </h5>
-      <button type="button" id="button-app-sys-information" data-section="app-sys-information" class="nav-button" >Get app or user <em>system information</em></button>
-      <button type="button" id="button-clipboard" data-section="clipboard" class="nav-button">Copy and paste from the <em>clipboard</em></button>
-      <button type="button" id="button-protocol" data-section="protocol" class="nav-button">Launch app from <em>protocol handler</em></button>
+      <button type="button" id="button-app-sys-information" data-section="app-sys-information" class="nav-button">取得應用程式或<em>系統資訊</em></button>
+      <button type="button" id="button-clipboard" data-section="clipboard" class="nav-button">從<em>剪貼簿</em>複製並貼上</button>
+      <button type="button" id="button-protocol" data-section="protocol" class="nav-button">從<em>通訊協定</em>啟動應用程式</button>
     </div>
 
     <div class="nav-item u-category-media">
       <h5 class="nav-category">
         <svg class="nav-icon"><use xlink:href="assets/img/icons.svg#icon-media"></use></svg>
-        Media
+        媒體
       </h5>
-      <button type="button" id="button-pdf" data-section="pdf" class="nav-button"><em>Print</em> to PDF</button>
-      <button type="button" id="button-desktop-capturer" data-section="desktop-capturer" class="nav-button">Take a <em>screenshot</em></button>
+      <button type="button" id="button-pdf" data-section="pdf" class="nav-button"><em>列印</em>至 PDF</button>
+      <button type="button" id="button-desktop-capturer" data-section="desktop-capturer" class="nav-button">螢幕<em>截圖</em></button>
     </div>
 
     <footer class="nav-footer">
-      <button type="button" id="button-about" data-modal="about" class="nav-footer-button">About</button>
+      <button type="button" id="button-about" data-modal="about" class="nav-footer-button">關於</button>
       <a class="nav-footer-logo" href="https://github.com" aria-label="Homepage">
         <svg class="nav-footer-icon"><use xlink:href="assets/img/icons.svg#icon-love"></use></svg>
       </a>

@@ -12,9 +12,9 @@ processHangBtn.addEventListener('click', function (event) {
   win.on('unresponsive', function () {
     const options = {
       type: 'info',
-      title: 'Renderer Process Hanging',
-      message: 'This process is hanging.',
-      buttons: ['Reload', 'Close']
+      title: '渲染器程序沒有回應',
+      message: '這個程序已沒有回應。',
+      buttons: ['重新載入', '關閉']
     }
     dialog.showMessageBox(options, function (index) {
       if (index === 0) win.reload()
