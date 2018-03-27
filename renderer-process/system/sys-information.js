@@ -3,7 +3,7 @@ const homeDir = os.homedir()
 
 const sysInfoBtn = document.getElementById('sys-info')
 
-sysInfoBtn.addEventListener('click', function () {
+sysInfoBtn.addEventListener('click', () => {
   const message = `你的系統家目錄是：${homeDir}`
   document.getElementById('got-sys-info').innerHTML = message
 })
