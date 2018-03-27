@@ -1,6 +1,5 @@
-const ipc = require('electron').ipcMain
-const dialog = require('electron').dialog
+const {ipcMain, dialog} = require('electron')
 
-ipc.on('open-error-dialog', function (event) {
+ipcMain.on('open-error-dialog', (event) => {
   dialog.showErrorBox('錯誤訊息', '錯誤訊息範例')
 })
