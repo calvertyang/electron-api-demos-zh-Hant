@@ -1,7 +1,4 @@
-const electron = require('electron')
-const BrowserWindow = electron.BrowserWindow
-const Menu = electron.Menu
-const app = electron.app
+const {BrowserWindow, Menu, app, shell, dialog} = require('electron')
 
 let template = [{
   label: '編輯',
@@ -37,14 +34,12 @@ let template = [{
   submenu: [{
     label: '重新載入',
     accelerator: 'CmdOrCtrl+R',
-    click: function (item, focusedWindow) {
+    click: (item, focusedWindow) => {
       if (focusedWindow) {
         // 重新載入後，重新開始並關閉任何已開啟的次要視窗
         if (focusedWindow.id === 1) {
-          BrowserWindow.getAllWindows().forEach(function (win) {
-            if (win.id > 1) {
-              win.close()
-            }
+          BrowserWindow.getAllWindows().forEach(win => {
+            if (win.id > 1) win.close()
           })
         }
         focusedWindow.reload()
@@ -52,28 +47,28 @@ let template = [{
     }
   }, {
     label: '切換全螢幕',
-    accelerator: (function () {
+    accelerator: (() => {
       if (process.platform === 'darwin') {
         return 'Ctrl+Command+F'
       } else {
         return 'F11'
       }
     })(),
-    click: function (item, focusedWindow) {
+    click: (item, focusedWindow) => {
       if (focusedWindow) {
         focusedWindow.setFullScreen(!focusedWindow.isFullScreen())
       }
     }
   }, {
     label: '切換開發者工具',
-    accelerator: (function () {
+    accelerator: (() => {
       if (process.platform === 'darwin') {
         return 'Alt+Command+I'
       } else {
         return 'Ctrl+Shift+I'
       }
     })(),
-    click: function (item, focusedWindow) {
+    click: (item, focusedWindow) => {
       if (focusedWindow) {
         focusedWindow.toggleDevTools()
       }
@@ -90,7 +85,7 @@ let template = [{
           buttons: ['確定'],
           message: '本範例適用於「選單」章節，示範如何在應用程式選單中建立可點選的選單項目。'
         }
-        electron.dialog.showMessageBox(focusedWindow, options, function () {})
+        dialog.showMessageBox(focusedWindow, options, function () {})
       }
     }
   }]
@@ -112,7 +107,7 @@ let template = [{
     accelerator: 'CmdOrCtrl+Shift+T',
     enabled: false,
     key: 'reopenMenuItem',
-    click: function () {
+    click: () => {
       app.emit('activate')
     }
   }]
@@ -121,7 +116,7 @@ let template = [{
   role: 'help',
   submenu: [{
     label: '了解更多',
-    click: function () {
+    click: () => {
       electron.shell.openExternal('http://electron.atom.io')
     }
   }]
@@ -130,7 +125,7 @@ let template = [{
 function addUpdateMenuItems (items, position) {
   if (process.mas) return
 
-  const version = electron.app.getVersion()
+  const version = app.getVersion()
   let updateItems = [{
     label: `版本 ${version}`,
     enabled: false
@@ -142,7 +137,7 @@ function addUpdateMenuItems (items, position) {
     label: '檢查更新',
     visible: false,
     key: 'checkForUpdate',
-    click: function () {
+    click: () => {
       require('electron').autoUpdater.checkForUpdates()
     }
   }, {
@@ -150,7 +145,7 @@ function addUpdateMenuItems (items, position) {
     enabled: true,
     visible: false,
     key: 'restartToUpdate',
-    click: function () {
+    click: () => {
       require('electron').autoUpdater.quitAndInstall()
     }
   }]
@@ -163,9 +158,9 @@ function findReopenMenuItem () {
   if (!menu) return
 
   let reopenMenuItem
-  menu.items.forEach(function (item) {
+  menu.items.forEach(item => {
     if (item.submenu) {
-      item.submenu.items.forEach(function (item) {
+      item.submenu.items.forEach(item => {
         if (item.key === 'reopenMenuItem') {
           reopenMenuItem = item
         }
@@ -176,7 +171,7 @@ function findReopenMenuItem () {
 }
 
 if (process.platform === 'darwin') {
-  const name = electron.app.getName()
+  const name = app.getName()
   template.unshift({
     label: name,
     submenu: [{
@@ -206,7 +201,7 @@ if (process.platform === 'darwin') {
     }, {
       label: '結束',
       accelerator: 'Command+Q',
-      click: function () {
+      click: () => {
         app.quit()
       }
     }]
@@ -228,17 +223,17 @@ if (process.platform === 'win32') {
   addUpdateMenuItems(helpMenu, 0)
 }
 
-app.on('ready', function () {
+app.on('ready', () => {
   const menu = Menu.buildFromTemplate(template)
   Menu.setApplicationMenu(menu)
 })
 
-app.on('browser-window-created', function () {
+app.on('browser-window-created', () => {
   let reopenMenuItem = findReopenMenuItem()
   if (reopenMenuItem) reopenMenuItem.enabled = false
 })
 
-app.on('window-all-closed', function () {
+app.on('window-all-closed', () => {
   let reopenMenuItem = findReopenMenuItem()
   if (reopenMenuItem) reopenMenuItem.enabled = true
 })
