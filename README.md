@@ -7,7 +7,7 @@
 >
 > 翻譯：[Calvert](https://github.com/CalvertYang) 及 [PJChen](https://github.com/pjchender)
 
-這是一個互動式的桌面應用程式，程式碼範例示範了 [Electron](http://electron.atom.io) API的核心功能。當然，它也是用 Electron 建置的。本應用程式適用於 Windows、macOS 和 Linux 作業系統。
+這是一個互動式的桌面應用程式，程式碼範例示範了 [Electron](http://electron.io) API的核心功能。當然，它也是用 Electron 建置的。本應用程式適用於 Windows、macOS 和 Linux 作業系統。
 
 透過這個應用程式，看看你可以用 Electron 做什麼，並使用原始碼來學習如何建立一個基本的 Electron 應用程式。
 
@@ -16,9 +16,9 @@
 ---
 
 本專案遵守貢獻者公約[行為準則](CODE_OF_CONDUCT.md)。
-參與過程中，你必須遵守此準則。若有不能接受的行為，請回報給 electron@github.com。
+參與過程中，你必須遵守此準則。若有不能接受的行為，請回報給 [coc@electronjs.org](mailto:coc@electronjs.org)。
 
-在 Twitter 跟隨 [@ElectronJS](https://twitter.com/electronjs) 以獲取重要公告，或訪問 [electron 網站](http://electron.atom.io)。
+在 Twitter 跟隨 [@ElectronJS](https://twitter.com/electronjs) 以獲取重要公告，或訪問 [electron 網站](http://electron.io)。
 
 ## 使用
 
