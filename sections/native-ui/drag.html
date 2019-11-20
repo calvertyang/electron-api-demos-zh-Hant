@@ -1,0 +1,42 @@
+<template class="task-template">
+  <section id="drag-section" class="section js-section u-category-native-ui">
+    <header class="communication">
+      <div class="section-wrapper">
+        <h1>
+          <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-native-ui"></use></svg>
+          拖放檔案
+        </h1>
+        <h3>Electron 支援將檔案和內容從 Web 拖曳到作業系統的世界中。</h3>
+
+        <p>在瀏覽器查看<a href="https://electronjs.org/docs/tutorial/native-file-drag-drop">完整的 API 文件<span class="u-visible-to-screen-reader">(在新視窗開啟)</span></a>。</p>
+      </div>
+    </header>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="dragging-demo-toggle" class="js-container-target demo-toggle-button">拖曳檔案
+          <div class="demo-meta u-avoid-clicks">支援作業系統：Win、macOS、Linux <span class="demo-meta-divider">|</span> 程序：Both</div>
+        </button>
+        <div class="demo-box">
+          <div class="demo-controls">
+            <a href="#" id="drag-file-link">拖曳範例</a>
+          </div>
+          <p>點擊並拖曳上面的連結，將渲染器程序的 Javascript 檔案複製到你的機器上。</p>
+
+          <p>在這個範例中，為了回應 <code>ondragstart</code> 事件，呼叫了 <code>webContents.startDrag()</code> API。</p>
+          <h5>渲染器程序</h5>
+          <pre><code data-path="renderer-process/native-ui/drag/drag.js"></code></pre>
+          <h5>主程序</h5>
+          <pre><code data-path="main-process/native-ui/drag/drag.js"></code></pre>
+        </div>
+      </div>
+    </div>
+
+
+
+    <script type="text/javascript">
+      require('./renderer-process/native-ui/drag/drag')
+    </script>
+
+  </section>
+</template>
