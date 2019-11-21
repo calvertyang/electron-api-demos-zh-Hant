@@ -1,4 +1,5 @@
-const {desktopCapturer, screen, shell} = require('electron')
+const {desktopCapturer, shell} = require('electron')
+const {screen} = require('electron').remote
 
 const fs = require('fs')
 const os = require('os')
@@ -12,9 +13,7 @@ screenshot.addEventListener('click', (event) => {
   const thumbSize = determineScreenShotSize()
   let options = { types: ['screen'], thumbnailSize: thumbSize }
 
-  desktopCapturer.getSources(options, (error, sources) => {
-    if (error) return console.log(error)
-
+  desktopCapturer.getSources(options).then(async sources => {
     sources.forEach((source) => {
       if (source.name.toLowerCase() === 'entire screen' || source.name.toLowerCase() === 'screen 1') {
         const screenshotPath = path.join(os.tmpdir(), 'screenshot.png')
@@ -28,6 +27,8 @@ screenshot.addEventListener('click', (event) => {
         })
       }
     })
+  }).catch(error => {
+    console.log(error)
   })
 })
 
