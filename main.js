@@ -22,7 +22,7 @@ function initialize () {
       width: 1080,
       minWidth: 680,
       height: 840,
-      title: app.getName(),
+      title: app.name,
       webPreferences: {
         nodeIntegration: true
       }
